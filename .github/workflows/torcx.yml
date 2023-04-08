@@ -16,7 +16,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: 'torcx-addons'
-          path: '*.torcx.*'
+          path: 'dist/*.torcx.*'
 
   release:
     if: startsWith(github.ref, 'refs/tags/')

@@ -1,5 +1,4 @@
 version = 2.0.11
-build_number = 1
 
 build: clean torcx.tgz torcx.squashfs
 
@@ -22,9 +21,7 @@ torcx: micro
 	cp -a build/micro/micro dist/rootfs/bin/
 
 torcx.tgz: torcx
-	cd dist && tar -C rootfs -czf torcx.tgz .
-	mv dist/torcx.tgz "dist/micro:$(version)-$(build_number).torcx.tgz"
+	cd dist && tar -C rootfs -czf micro.torcx.tgz .
 
 torcx.squashfs: torcx
-	cd dist && mksquashfs rootfs torcx.squashfs -comp gzip 
-	mv dist/torcx.squashfs "dist/micro:$(version)-$(build_number).torcx.squashfs"
+	cd dist && mksquashfs rootfs micro.torcx.squashfs -comp gzip 
